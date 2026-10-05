@@ -1,13 +1,4 @@
-import 'package:did_i_assist/src/l10n/generated/app_localizations.dart';
-import 'package:flutter/material.dart';
+import 'package:did_i_assist/src/app/app_startup.dart';
+import 'package:did_i_assist/src/app/didi_assist_app.dart';
 
-void main() {
-  runApp(
-    const MaterialApp(
-      title: 'DidIAssist',
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: Scaffold(body: Center(child: Text('DidIAssist'))),
-    ),
-  );
-}
+void main() => AppStartup().launch(const DidIAssistApp());

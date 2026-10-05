@@ -1,0 +1,1 @@
+enum PlaceKind { campus, home }

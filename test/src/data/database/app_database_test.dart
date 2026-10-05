@@ -31,7 +31,7 @@ void main() {
         .insert(scheduleSlotToCompanion(sampleSlot()));
   }
 
-  test('creates seven tables at version 1 and enables foreign keys', () async {
+  test('creates eight tables at version 2 and enables foreign keys', () async {
     final tables = await database
         .customSelect(
           "SELECT name FROM sqlite_master WHERE type = 'table' ORDER BY name",
@@ -39,6 +39,7 @@ void main() {
         .get();
     expect(tables.map((row) => row.read<String>('name')), [
       'attendance_records',
+      'class_sample_tasks',
       'courses',
       'location_events',
       'places',
@@ -46,11 +47,11 @@ void main() {
       'trips',
       'user_settings',
     ]);
-    expect(database.schemaVersion, 1);
+    expect(database.schemaVersion, 2);
     expect(
       (await database.customSelect('PRAGMA user_version').getSingle())
           .read<int>('user_version'),
-      1,
+      2,
     );
     expect(
       (await database.customSelect('PRAGMA foreign_keys').getSingle())

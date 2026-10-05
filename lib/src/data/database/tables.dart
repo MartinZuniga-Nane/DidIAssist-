@@ -119,3 +119,16 @@ class UserSettingsTable extends Table {
   @override
   Set<Column<Object>> get primaryKey => {id};
 }
+
+@DataClassName('ClassSampleTaskRow')
+class ClassSampleTasks extends Table {
+  TextColumn get uniqueName => text()();
+  TextColumn get slotId => text()();
+  TextColumn get occurrenceDate => text()();
+  IntColumn get offsetMinutes => integer()();
+  IntColumn get classStart => integer()();
+  IntColumn get runAt => integer()();
+
+  @override
+  Set<Column<Object>> get primaryKey => {uniqueName};
+}

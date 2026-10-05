@@ -13,6 +13,7 @@ part 'app_database.g.dart';
     AttendanceRecords,
     Trips,
     UserSettingsTable,
+    ClassSampleTasks,
   ],
 )
 final class AppDatabase extends _$AppDatabase {
@@ -27,13 +28,17 @@ final class AppDatabase extends _$AppDatabase {
   AppDatabase.forTesting(super.executor);
 
   @override
-  int get schemaVersion => 1;
+  int get schemaVersion => 2;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
     onCreate: (migrator) => migrator.createAll(),
     onUpgrade: (migrator, from, to) async {
-      throw UnsupportedError('No migration from schema $from to $to.');
+      if (from == 1 && to == 2) {
+        await migrator.createTable(classSampleTasks);
+      } else {
+        throw UnsupportedError('No migration from schema $from to $to.');
+      }
     },
     beforeOpen: (details) async {
       await customStatement('PRAGMA foreign_keys = ON');

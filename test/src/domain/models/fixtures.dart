@@ -1,4 +1,5 @@
 import 'package:did_i_assist/src/core/geo_point.dart';
+import 'package:did_i_assist/src/core/local_date.dart';
 import 'package:did_i_assist/src/domain/models/models.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -27,6 +28,13 @@ ScheduleSlot sampleSlot() => ScheduleSlot(
   weekday: DateTime.monday,
   startMinute: 540,
   durationMinutes: 90,
+);
+
+ClassOccurrence sampleOccurrence() => ClassOccurrence.forDate(
+  slot: sampleSlot(),
+  course: sampleCourse(),
+  place: samplePlace(),
+  date: LocalDate(2026, 10, 5),
 );
 
 void expectValueEquality(

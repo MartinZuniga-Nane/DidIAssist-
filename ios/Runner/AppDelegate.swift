@@ -2,6 +2,7 @@ import Flutter
 import UIKit
 import native_geofence
 import UserNotifications
+import workmanager_apple
 
 @main
 @objc class AppDelegate: FlutterAppDelegate {
@@ -12,6 +13,13 @@ import UserNotifications
     NativeGeofencePlugin.setPluginRegistrantCallback { registry in
       GeneratedPluginRegistrant.register(with: registry)
     }
+    WorkmanagerPlugin.setPluginRegistrantCallback { registry in
+      GeneratedPluginRegistrant.register(with: registry)
+    }
+    WorkmanagerPlugin.registerPeriodicTask(
+      withIdentifier: "com.didiassist.app.periodic_sync",
+      earliestBeginInSeconds: NSNumber(value: 30 * 60)
+    )
     UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
     GeneratedPluginRegistrant.register(with: self)
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)

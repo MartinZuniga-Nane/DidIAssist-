@@ -33,6 +33,14 @@
 	<string>DidIAssist uses your location to check you in for class and estimate travel time. Your location stays on this device and is never sent elsewhere.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Allow background location so DidIAssist can automatically check you in when you reach campus, even when the app is closed. Your location stays on this device and is never sent elsewhere.</string>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.didiassist.app.periodic_sync</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

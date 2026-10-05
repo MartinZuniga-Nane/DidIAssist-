@@ -16,7 +16,13 @@ part 'app_database.g.dart';
   ],
 )
 final class AppDatabase extends _$AppDatabase {
-  AppDatabase() : super(driftDatabase(name: 'did_i_assist'));
+  AppDatabase()
+    : super(
+        driftDatabase(
+          name: 'did_i_assist',
+          native: const DriftNativeOptions(shareAcrossIsolates: true),
+        ),
+      );
 
   AppDatabase.forTesting(super.executor);
 
@@ -31,6 +37,8 @@ final class AppDatabase extends _$AppDatabase {
     },
     beforeOpen: (details) async {
       await customStatement('PRAGMA foreign_keys = ON');
+      // A bounded lock wait is safe for every client of the shared connection.
+      await customStatement('PRAGMA busy_timeout = 5000');
     },
   );
 }

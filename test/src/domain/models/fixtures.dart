@@ -18,6 +18,17 @@ Place samplePlace() => Place(
   center: samplePoint(),
 );
 
+Course sampleCourse() => Course(id: courseId, name: 'Mathematics');
+
+ScheduleSlot sampleSlot() => ScheduleSlot(
+  id: slotId,
+  courseId: courseId,
+  placeId: placeId,
+  weekday: DateTime.monday,
+  startMinute: 540,
+  durationMinutes: 90,
+);
+
 void expectValueEquality(
   Equatable original,
   Equatable equal,

@@ -3,6 +3,8 @@ import 'package:did_i_assist/src/app/attendance_sampling_policy.dart';
 import 'package:did_i_assist/src/app/background_operations.dart';
 import 'package:did_i_assist/src/app/background_pipeline.dart';
 import 'package:did_i_assist/src/app/class_sample_scheduler.dart';
+import 'package:did_i_assist/src/app/notification_attendance_listener.dart';
+import 'package:did_i_assist/src/app/permission_onboarding.dart';
 import 'package:did_i_assist/src/data/database/app_database.dart';
 import 'package:did_i_assist/src/data/repositories/drift_attendance_repository.dart';
 import 'package:did_i_assist/src/data/repositories/drift_class_sample_schedule_store.dart';
@@ -19,12 +21,15 @@ import 'package:did_i_assist/src/domain/models/attendance_record.dart';
 import 'package:did_i_assist/src/domain/models/location_event.dart';
 import 'package:did_i_assist/src/domain/models/trip.dart';
 import 'package:did_i_assist/src/domain/repositories/class_sample_task_gateway.dart';
+import 'package:did_i_assist/src/domain/repositories/notification_gateway.dart';
 import 'package:did_i_assist/src/domain/services/attendance_evaluator.dart';
+import 'package:did_i_assist/src/domain/services/attendance_notifier.dart';
 import 'package:did_i_assist/src/domain/services/attendance_service.dart';
 import 'package:did_i_assist/src/domain/services/departure_service.dart';
 import 'package:did_i_assist/src/domain/services/geofence_sync.dart';
 import 'package:did_i_assist/src/domain/services/location_event_recorder.dart';
 import 'package:did_i_assist/src/domain/services/position_sampler.dart';
+import 'package:did_i_assist/src/domain/services/reminder_service.dart';
 import 'package:did_i_assist/src/domain/services/schedule_resolver.dart';
 import 'package:did_i_assist/src/domain/services/trip_recorder.dart';
 
@@ -41,6 +46,7 @@ final class AppServices implements BackgroundTaskServices {
     required PositionProvider positionProvider,
     required LocationPermissionGateway permissions,
     required ClassSampleTaskGateway sampleTasks,
+    required NotificationGateway notifications,
     required Clock timeSource,
     Iterable<AttendanceResultListener> attendanceListeners = const [],
     String Function()? generateId,
@@ -97,10 +103,41 @@ final class AppServices implements BackgroundTaskServices {
       gateway: sampleTasks,
       timeSource: timeSource,
     );
+    final departureService = DepartureService(
+      placeRepository: places,
+      settingsRepository: settings,
+      tripRepository: trips,
+      timeSource: timeSource,
+    );
+    final reminderService = ReminderService(
+      courseRepository: courses,
+      placeRepository: places,
+      settingsRepository: settings,
+      departureService: departureService,
+      gateway: notifications,
+      timeSource: timeSource,
+    );
+    final attendanceNotifier = AttendanceNotifier(
+      gateway: notifications,
+      settingsRepository: settings,
+      courseRepository: courses,
+    );
+    final permissionOnboarding = PermissionOnboarding(
+      location: permissions,
+      notifications: notifications,
+      syncGeofences: geofenceSync.sync,
+      syncClassSamples: () async {
+        await scheduler.sync();
+      },
+    );
     return AppServices._(
       database: database,
       timeSource: timeSource,
       permissions: permissions,
+      notifications: notifications,
+      reminderService: reminderService,
+      attendanceNotifier: attendanceNotifier,
+      permissionOnboarding: permissionOnboarding,
       places: places,
       courses: courses,
       attendance: attendance,
@@ -115,12 +152,7 @@ final class AppServices implements BackgroundTaskServices {
       positionSampler: sampler,
       samplingPolicy: samplingPolicy,
       classSampleScheduler: scheduler,
-      departureService: DepartureService(
-        placeRepository: places,
-        settingsRepository: settings,
-        tripRepository: trips,
-        timeSource: timeSource,
-      ),
+      departureService: departureService,
       pipeline: BackgroundPipeline(
         operations: _ServiceOperations(
           recorder: recorder,
@@ -130,8 +162,13 @@ final class AppServices implements BackgroundTaskServices {
           attendance: attendanceService,
           trips: tripRecorder,
           scheduler: scheduler,
+          reminders: reminderService,
+          permissions: permissions,
         ),
-        listeners: attendanceListeners,
+        listeners: [
+          NotificationAttendanceListener(attendanceNotifier),
+          ...attendanceListeners,
+        ],
       ),
     );
   }
@@ -140,6 +177,10 @@ final class AppServices implements BackgroundTaskServices {
     required AppDatabase database,
     required this.timeSource,
     required this.permissions,
+    required this.notifications,
+    required this.reminderService,
+    required this.attendanceNotifier,
+    required this.permissionOnboarding,
     required this.places,
     required this.courses,
     required this.attendance,
@@ -162,6 +203,10 @@ final class AppServices implements BackgroundTaskServices {
   @override
   final Clock timeSource;
   final LocationPermissionGateway permissions;
+  final NotificationGateway notifications;
+  final ReminderService reminderService;
+  final AttendanceNotifier attendanceNotifier;
+  final PermissionOnboarding permissionOnboarding;
   final DriftPlaceRepository places;
   final DriftCourseRepository courses;
   final DriftAttendanceRepository attendance;
@@ -181,6 +226,18 @@ final class AppServices implements BackgroundTaskServices {
   final BackgroundPipeline pipeline;
   Future<void>? _closing;
 
+  Future<void> syncGeofencesWhenPermitted() async {
+    if (await permissions.check() == LocationPermissionStatus.always) {
+      await geofenceSync.sync();
+    }
+  }
+
+  Future<void> syncClassSamplesWhenPermitted() async {
+    if (await permissions.check() == LocationPermissionStatus.always) {
+      await classSampleScheduler.sync();
+    }
+  }
+
   @override
   Future<void> dispose() => _closing ??= _database.close();
 }
@@ -194,6 +251,8 @@ final class _ServiceOperations implements BackgroundOperations {
     required this.attendance,
     required this.trips,
     required this.scheduler,
+    required this.reminders,
+    required this.permissions,
   });
 
   final LocationEventRecorder recorder;
@@ -203,6 +262,8 @@ final class _ServiceOperations implements BackgroundOperations {
   final AttendanceService attendance;
   final TripRecorder trips;
   final ClassSampleScheduler scheduler;
+  final ReminderService reminders;
+  final LocationPermissionGateway permissions;
 
   @override
   Future<List<LocationEvent>> recordTransition(GeofenceTransition transition) =>
@@ -213,11 +274,27 @@ final class _ServiceOperations implements BackgroundOperations {
         fix: transition.fix,
       );
   @override
-  Future<void> syncGeofences() => geofences.sync();
+  Future<void> syncGeofences() async {
+    if (await permissions.check() == LocationPermissionStatus.always) {
+      await geofences.sync();
+    }
+  }
+
   @override
   Future<bool> needsPositionSample() => samplingPolicy.needsSample();
   @override
-  Future<PositionSampleResult> samplePosition() => sampler.sample();
+  Future<PositionSampleResult> samplePosition() async {
+    final status = await permissions.check();
+    if (status != LocationPermissionStatus.always) {
+      return PositionSampleFailed(
+        status == LocationPermissionStatus.serviceDisabled
+            ? PositionFailureReason.serviceDisabled
+            : PositionFailureReason.permissionDenied,
+      );
+    }
+    return sampler.sample();
+  }
+
   @override
   Future<List<AttendanceRecord>> evaluateAttendance() =>
       attendance.evaluateRecent();
@@ -225,6 +302,13 @@ final class _ServiceOperations implements BackgroundOperations {
   Future<List<Trip>> recordTrips() => trips.recordRecent();
   @override
   Future<void> scheduleClassSamples() async {
-    await scheduler.sync();
+    if (await permissions.check() == LocationPermissionStatus.always) {
+      await scheduler.sync();
+    }
+  }
+
+  @override
+  Future<void> reconcileReminders() async {
+    await reminders.reconcile();
   }
 }

@@ -2,6 +2,7 @@ import 'package:clock/clock.dart';
 import 'package:did_i_assist/src/app/app_services.dart';
 import 'package:did_i_assist/src/app/start_background_work.dart';
 import 'package:did_i_assist/src/core/local_date.dart';
+import 'package:did_i_assist/src/domain/location/location_permission_gateway.dart';
 import 'package:did_i_assist/src/domain/location/position_fix.dart';
 import 'package:did_i_assist/src/domain/services/class_sample_planner.dart';
 import 'package:did_i_assist/src/platform/background/background_scheduler.dart';
@@ -170,6 +171,7 @@ void main() {
         ),
         permissions: FakePermissions(),
         sampleTasks: samples,
+        notifications: FakeNotifications(),
         timeSource: Clock.fixed(now),
       );
       addTearDown(services.dispose);
@@ -185,4 +187,80 @@ void main() {
       verify(() => manager.initialize(callbackDispatcher)).called(1);
     },
   );
+
+  test(
+    'startup isolates registration failures and still schedules samples',
+    () async {
+      final source = occurrence();
+      final geofences = FakeGeofenceRegistrar()..failSync = true;
+      final samples = FakeClassSampleGateway();
+      final errors = <Object>[];
+      final services = AppServices(
+        database: createTestDatabase(),
+        geofenceRegistrar: geofences,
+        positionProvider: FakePositionProvider(
+          PositionFix(
+            position: source.place.center,
+            timestamp: now,
+          ),
+        ),
+        permissions: FakePermissions(),
+        sampleTasks: samples,
+        notifications: FakeNotifications(),
+        timeSource: Clock.fixed(now),
+      );
+      addTearDown(services.dispose);
+      await services.places.save(source.place);
+      await services.courses.saveCourse(source.course);
+      await services.courses.saveSlot(source.slot);
+      when(
+        () => manager.initialize(any()),
+      ).thenThrow(StateError('worker failed'));
+      await startBackgroundWork(
+        services,
+        scheduler: BackgroundScheduler(manager: manager),
+        onError: (error, _) => errors.add(error),
+      );
+      expect(errors, hasLength(2));
+      expect(samples.tasks, hasLength(2));
+    },
+  );
+
+  for (final status in LocationPermissionStatus.values.where(
+    (status) => status != LocationPermissionStatus.always,
+  )) {
+    test(
+      'startup defers location work for $status and registers periodic work',
+      () async {
+        final source = occurrence();
+        final geofences = FakeGeofenceRegistrar();
+        final samples = FakeClassSampleGateway();
+        final errors = <Object>[];
+        final services = AppServices(
+          database: createTestDatabase(),
+          geofenceRegistrar: geofences,
+          positionProvider: FakePositionProvider(
+            PositionFix(
+              position: source.place.center,
+              timestamp: now,
+            ),
+          ),
+          permissions: FakePermissions(status),
+          sampleTasks: samples,
+          notifications: FakeNotifications(),
+          timeSource: Clock.fixed(now),
+        );
+        addTearDown(services.dispose);
+        await startBackgroundWork(
+          services,
+          scheduler: BackgroundScheduler(manager: manager),
+          onError: (error, _) => errors.add(error),
+        );
+        expect(errors, isEmpty);
+        expect(geofences.reads, 0);
+        expect(samples.tasks, isEmpty);
+        verify(() => manager.initialize(callbackDispatcher)).called(1);
+      },
+    );
+  }
 }

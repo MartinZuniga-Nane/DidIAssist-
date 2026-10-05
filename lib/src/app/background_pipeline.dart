@@ -60,6 +60,10 @@ final class BackgroundPipeline implements BackgroundTaskTarget {
       BackgroundStage.scheduleClassSamples,
       _operations.scheduleClassSamples,
     );
+    await run.attempt(
+      BackgroundStage.reconcileReminders,
+      _operations.reconcileReminders,
+    );
     return run.result;
   }
 

@@ -2,6 +2,7 @@ import 'package:clock/clock.dart';
 import 'package:did_i_assist/src/app/app_services.dart';
 import 'package:did_i_assist/src/app/background_operations.dart';
 import 'package:did_i_assist/src/domain/location/geofence_transition.dart';
+import 'package:did_i_assist/src/domain/location/location_permission_gateway.dart';
 import 'package:did_i_assist/src/domain/location/position_fix.dart';
 import 'package:did_i_assist/src/domain/models/models.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -43,6 +44,7 @@ void main() {
       positionProvider: positions,
       permissions: FakePermissions(),
       sampleTasks: tasks,
+      notifications: FakeNotifications(),
       timeSource: Clock(() => now),
       attendanceListeners: [listener],
       generateId: () => 'record-${nextId++}',
@@ -118,6 +120,23 @@ void main() {
     expect((await services.pipeline.onPeriodicTick()).succeeded, isTrue);
     expect(positions.requests, 0);
   });
+
+  for (final status in LocationPermissionStatus.values.where(
+    (status) => status != LocationPermissionStatus.always,
+  )) {
+    test(
+      'background work degrades without always permission: $status',
+      () async {
+        await seedSchedule();
+        (services.permissions as FakePermissions).status = status;
+        final result = await services.pipeline.onPeriodicTick();
+        expect(result.succeeded, isTrue);
+        expect(positions.requests, 0);
+        expect(geofences.reads, 0);
+        expect(tasks.tasks, isEmpty);
+      },
+    );
+  }
 
   test(
     'class-time fallback recovers attendance without any geofence enter',

@@ -14,6 +14,7 @@ abstract interface class BackgroundOperations {
   Future<List<AttendanceRecord>> evaluateAttendance();
   Future<List<Trip>> recordTrips();
   Future<void> scheduleClassSamples();
+  Future<void> reconcileReminders();
 }
 
 // A named hook allows each isolate to construct its own result listeners.
@@ -31,6 +32,7 @@ enum BackgroundStage {
   recordTrips,
   notifyListener,
   scheduleClassSamples,
+  reconcileReminders,
 }
 
 final class BackgroundStageFailure {

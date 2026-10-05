@@ -52,6 +52,7 @@ void main() {
     ).thenAnswer((_) async => [sampleAttendance()]);
     when(operations.recordTrips).thenAnswer((_) async => [sampleTrip()]);
     when(operations.scheduleClassSamples).thenAnswer((_) async {});
+    when(operations.reconcileReminders).thenAnswer((_) async {});
     when(() => listener.onAttendanceWritten(any())).thenAnswer((_) async {});
   });
 
@@ -161,6 +162,7 @@ void main() {
         operations.recordTrips,
         () => listener.onAttendanceWritten(any()),
         operations.scheduleClassSamples,
+        operations.reconcileReminders,
       ]);
       expect(result.sampleResult, isA<PositionSampleRecorded>());
       expect(result.events, hasLength(1));
@@ -174,7 +176,35 @@ void main() {
     verifyNever(operations.samplePosition);
     verify(operations.evaluateAttendance).called(1);
     verify(operations.scheduleClassSamples).called(1);
+    verify(operations.reconcileReminders).called(1);
   });
+
+  test('reminder failure leaves evidence and attendance available', () async {
+    when(
+      operations.reconcileReminders,
+    ).thenThrow(StateError('reminders failed'));
+    final result = await pipeline.onPeriodicTick();
+    expect(result.failures.single.stage, BackgroundStage.reconcileReminders);
+    expect(result.events, hasLength(1));
+    expect(result.attendance, [sampleAttendance()]);
+    verify(operations.scheduleClassSamples).called(1);
+    verify(() => listener.onAttendanceWritten(any())).called(1);
+  });
+
+  test(
+    'a failed earlier stage does not suppress reminder reconciliation',
+    () async {
+      when(
+        operations.scheduleClassSamples,
+      ).thenThrow(StateError('samples failed'));
+      final result = await pipeline.onPeriodicTick();
+      expect(
+        result.failures.single.stage,
+        BackgroundStage.scheduleClassSamples,
+      );
+      verify(operations.reconcileReminders).called(1);
+    },
+  );
 
   test(
     'periodic failures remain isolated through the final scheduling stage',

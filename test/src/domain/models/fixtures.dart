@@ -30,6 +30,15 @@ ScheduleSlot sampleSlot() => ScheduleSlot(
   durationMinutes: 90,
 );
 
+LocationEvent sampleEvent() => LocationEvent(
+  id: recordId,
+  type: LocationEventType.geofenceEnter,
+  placeId: placeId,
+  position: samplePoint(),
+  accuracyMeters: 20,
+  recordedAt: DateTime.utc(2026, 10, 5, 9),
+);
+
 ClassOccurrence sampleOccurrence() => ClassOccurrence.forDate(
   slot: sampleSlot(),
   course: sampleCourse(),

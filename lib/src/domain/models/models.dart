@@ -11,3 +11,4 @@ export 'place_kind.dart';
 export 'schedule_slot.dart';
 export 'travel_mode.dart';
 export 'trip.dart';
+export 'user_settings.dart';

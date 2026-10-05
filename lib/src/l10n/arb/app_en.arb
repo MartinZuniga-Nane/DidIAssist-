@@ -1,0 +1,100 @@
+{
+  "@@locale": "en",
+  "departureReminderTitle": "Time to leave for {courseName}",
+  "@departureReminderTitle": {
+    "placeholders": {
+      "courseName": {
+        "type": "String"
+      }
+    }
+  },
+  "departureReminderBody": "Leave by {leaveByTime} for {courseName} at {placeName}. Travel time: {etaMinutes, plural, =1{1 minute} other{{etaMinutes} minutes}}.",
+  "@departureReminderBody": {
+    "placeholders": {
+      "courseName": {
+        "type": "String"
+      },
+      "placeName": {
+        "type": "String"
+      },
+      "leaveByTime": {
+        "type": "String"
+      },
+      "etaMinutes": {
+        "type": "int"
+      }
+    }
+  },
+  "lateWarningTitle": "Running late for {courseName}",
+  "@lateWarningTitle": {
+    "placeholders": {
+      "courseName": {
+        "type": "String"
+      }
+    }
+  },
+  "lateWarningBody": "You will arrive {lateMinutes, plural, =1{1 minute} other{{lateMinutes} minutes}} late to {courseName}.",
+  "@lateWarningBody": {
+    "placeholders": {
+      "courseName": {
+        "type": "String"
+      },
+      "lateMinutes": {
+        "type": "int"
+      }
+    }
+  },
+  "attendanceRecordedTitle": "Attendance recorded",
+  "attendancePresentBody": "{courseName}: present. Checked in at {checkInTime}.",
+  "@attendancePresentBody": {
+    "placeholders": {
+      "courseName": {
+        "type": "String"
+      },
+      "checkInTime": {
+        "type": "String"
+      }
+    }
+  },
+  "attendanceLateBody": "{courseName}: late. Checked in at {checkInTime}.",
+  "@attendanceLateBody": {
+    "placeholders": {
+      "courseName": {
+        "type": "String"
+      },
+      "checkInTime": {
+        "type": "String"
+      }
+    }
+  },
+  "attendancePresentWithoutTimeBody": "{courseName}: present.",
+  "@attendancePresentWithoutTimeBody": {
+    "placeholders": {
+      "courseName": {
+        "type": "String"
+      }
+    }
+  },
+  "attendanceLateWithoutTimeBody": "{courseName}: late.",
+  "@attendanceLateWithoutTimeBody": {
+    "placeholders": {
+      "courseName": {
+        "type": "String"
+      }
+    }
+  },
+  "attendanceAbsentTitle": "Absence recorded",
+  "attendanceAbsentBody": "You were marked absent for {courseName}.",
+  "@attendanceAbsentBody": {
+    "placeholders": {
+      "courseName": {
+        "type": "String"
+      }
+    }
+  },
+  "unknownCourseName": "Class",
+  "departureChannelName": "Departure reminders",
+  "departureChannelDescription": "Reminders to leave in time for your classes.",
+  "attendanceChannelName": "Attendance results",
+  "attendanceChannelDescription": "Updates when class attendance is recorded."
+}

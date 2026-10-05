@@ -1,0 +1,19 @@
+{
+  "@@locale": "es",
+  "departureReminderTitle": "Hora de salir para {courseName}",
+  "departureReminderBody": "Sal a más tardar a las {leaveByTime} para {courseName} en {placeName}. Tiempo de viaje: {etaMinutes, plural, =1{1 minuto} other{{etaMinutes} minutos}}.",
+  "lateWarningTitle": "Vas tarde a {courseName}",
+  "lateWarningBody": "Llegarás {lateMinutes, plural, =1{1 minuto} other{{lateMinutes} minutos}} tarde a {courseName}.",
+  "attendanceRecordedTitle": "Asistencia registrada",
+  "attendancePresentBody": "{courseName}: presente. Llegada registrada a las {checkInTime}.",
+  "attendanceLateBody": "{courseName}: llegada tarde. Llegada registrada a las {checkInTime}.",
+  "attendancePresentWithoutTimeBody": "{courseName}: presente.",
+  "attendanceLateWithoutTimeBody": "{courseName}: llegada tarde.",
+  "attendanceAbsentTitle": "Inasistencia registrada",
+  "attendanceAbsentBody": "Se registró tu inasistencia a {courseName}.",
+  "unknownCourseName": "Clase",
+  "departureChannelName": "Recordatorios de salida",
+  "departureChannelDescription": "Recordatorios para salir a tiempo hacia tus clases.",
+  "attendanceChannelName": "Resultados de asistencia",
+  "attendanceChannelDescription": "Avisos cuando se registra la asistencia a tus clases."
+}

@@ -116,4 +116,7 @@ final class InMemorySettingsRepository implements SettingsRepository {
 
   @override
   Future<void> save(UserSettings settings) async => this.settings = settings;
+
+  @override
+  Stream<UserSettings> watch() => Stream.value(settings);
 }

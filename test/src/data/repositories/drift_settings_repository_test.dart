@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:did_i_assist/src/data/database/app_database.dart';
 import 'package:did_i_assist/src/data/repositories/drift_settings_repository.dart';
 import 'package:did_i_assist/src/domain/models/models.dart';
@@ -69,6 +71,28 @@ void main() {
       hasLength(1),
     );
   });
+
+  test(
+    'watch emits defaults and subsequent distinct settings changes',
+    () async {
+      final initial = Completer<void>();
+      final updated = Completer<void>();
+      final values = <UserSettings>[];
+      final next = UserSettings(notificationsEnabled: false);
+      final subscription = repository.watch().listen((value) {
+        values.add(value);
+        if (!initial.isCompleted) initial.complete();
+        if (value == next && !updated.isCompleted) updated.complete();
+      });
+      addTearDown(subscription.cancel);
+      await initial.future;
+      await repository.save(UserSettings());
+      await repository.load();
+      await repository.save(next);
+      await updated.future;
+      expect(values, [UserSettings(), next]);
+    },
+  );
 
   test('parallel saves retain one complete settings value', () async {
     final first = UserSettings(defaultTravelMode: TravelMode.driving);

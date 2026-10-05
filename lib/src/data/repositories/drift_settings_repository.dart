@@ -24,4 +24,15 @@ final class DriftSettingsRepository implements SettingsRepository {
           settingsToCompanion(settings),
         );
   }
+
+  @override
+  Stream<UserSettings> watch() =>
+      (_database.select(
+            _database.userSettingsTable,
+          )..where((table) => table.id.equals(1)))
+          .watchSingleOrNull()
+          .map(
+            (row) => row == null ? UserSettings() : settingsFromRow(row),
+          )
+          .distinct();
 }

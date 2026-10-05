@@ -40,7 +40,14 @@ final class LocalNotificationsGateway implements NotificationGateway {
         IOSFlutterLocalNotificationsPlugin
       >();
 
-  Future<void> initialize() => _initialization ??= _initialize();
+  Future<void> initialize() async {
+    try {
+      await (_initialization ??= _initialize());
+    } on Object {
+      _initialization = null;
+      rethrow;
+    }
+  }
 
   Future<void> _initialize() async {
     tz_data.initializeTimeZones();

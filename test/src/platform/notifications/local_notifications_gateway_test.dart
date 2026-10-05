@@ -92,6 +92,22 @@ void main() {
     },
   );
 
+  test('failed native initialization can be retried', () async {
+    var attempts = 0;
+    messenger.setMockMethodCallHandler(channel, (call) async {
+      if (call.method == 'initialize') {
+        if (attempts++ == 0) {
+          throw PlatformException(code: 'temporarily_unavailable');
+        }
+        return true;
+      }
+      return null;
+    });
+    await expectLater(gateway.initialize(), throwsA(isA<PlatformException>()));
+    await gateway.initialize();
+    expect(attempts, 2);
+  });
+
   for (final enabled in [true, false, null]) {
     test('maps Android permission $enabled without prompting', () async {
       permission = enabled;

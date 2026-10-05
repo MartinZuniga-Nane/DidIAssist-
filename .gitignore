@@ -10,6 +10,9 @@ coverage/
 doc/api/
 *.symbols
 *.map.json
+*.g.dart
+lib/src/data/database/*.steps.dart
+test/src/data/database/migrations/**/generated/
 
 # Android
 .gradle/

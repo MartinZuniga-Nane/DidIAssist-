@@ -1,0 +1,1 @@
+enum AttendanceSource { automatic, manual }

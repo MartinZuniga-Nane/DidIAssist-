@@ -1,3 +1,7 @@
+export 'attendance_policy.dart';
+export 'attendance_record.dart';
+export 'attendance_source.dart';
+export 'attendance_status.dart';
 export 'class_occurrence.dart';
 export 'course.dart';
 export 'location_event.dart';

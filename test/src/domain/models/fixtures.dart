@@ -39,6 +39,17 @@ LocationEvent sampleEvent() => LocationEvent(
   recordedAt: DateTime.utc(2026, 10, 5, 9),
 );
 
+AttendanceRecord sampleAttendance() => AttendanceRecord(
+  id: recordId,
+  slotId: slotId,
+  courseId: courseId,
+  occurrenceDate: LocalDate(2026, 10, 5),
+  status: AttendanceStatus.present,
+  source: AttendanceSource.automatic,
+  checkInAt: DateTime.utc(2026, 10, 5, 9),
+  evaluatedAt: DateTime.utc(2026, 10, 5, 11),
+);
+
 ClassOccurrence sampleOccurrence() => ClassOccurrence.forDate(
   slot: sampleSlot(),
   course: sampleCourse(),

@@ -9,3 +9,5 @@ export 'location_event_type.dart';
 export 'place.dart';
 export 'place_kind.dart';
 export 'schedule_slot.dart';
+export 'travel_mode.dart';
+export 'trip.dart';

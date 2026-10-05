@@ -50,6 +50,15 @@ AttendanceRecord sampleAttendance() => AttendanceRecord(
   evaluatedAt: DateTime.utc(2026, 10, 5, 11),
 );
 
+Trip sampleTrip() => Trip(
+  id: recordId,
+  fromPlaceId: homeId,
+  toPlaceId: placeId,
+  departedAt: DateTime.utc(2026, 10, 5, 8),
+  arrivedAt: DateTime.utc(2026, 10, 5, 8, 30),
+  mode: TravelMode.transit,
+);
+
 ClassOccurrence sampleOccurrence() => ClassOccurrence.forDate(
   slot: sampleSlot(),
   course: sampleCourse(),

@@ -1,14 +1,14 @@
 import 'package:clock/clock.dart';
-import 'package:did_i_assist/src/core/local_date.dart';
-import 'package:did_i_assist/src/domain/models/models.dart';
-import 'package:did_i_assist/src/domain/models/planned_notification.dart';
-import 'package:did_i_assist/src/domain/repositories/course_repository.dart';
-import 'package:did_i_assist/src/domain/repositories/notification_gateway.dart';
-import 'package:did_i_assist/src/domain/repositories/place_repository.dart';
-import 'package:did_i_assist/src/domain/repositories/settings_repository.dart';
-import 'package:did_i_assist/src/domain/repositories/trip_repository.dart';
-import 'package:did_i_assist/src/domain/services/departure_service.dart';
-import 'package:did_i_assist/src/domain/services/reminder_service.dart';
+import 'package:did_i_attend/src/core/local_date.dart';
+import 'package:did_i_attend/src/domain/models/models.dart';
+import 'package:did_i_attend/src/domain/models/planned_notification.dart';
+import 'package:did_i_attend/src/domain/repositories/course_repository.dart';
+import 'package:did_i_attend/src/domain/repositories/notification_gateway.dart';
+import 'package:did_i_attend/src/domain/repositories/place_repository.dart';
+import 'package:did_i_attend/src/domain/repositories/settings_repository.dart';
+import 'package:did_i_attend/src/domain/repositories/trip_repository.dart';
+import 'package:did_i_attend/src/domain/services/departure_service.dart';
+import 'package:did_i_attend/src/domain/services/reminder_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

@@ -1,7 +1,7 @@
-import 'package:did_i_assist/src/app/app_services.dart';
-import 'package:did_i_assist/src/data/database/mappers/date_mapping.dart';
-import 'package:did_i_assist/src/platform/background/background_task_names.dart';
-import 'package:did_i_assist/src/platform/background/open_background_services.dart';
+import 'package:did_i_attend/src/app/app_services.dart';
+import 'package:did_i_attend/src/data/database/mappers/date_mapping.dart';
+import 'package:did_i_attend/src/platform/background/background_task_names.dart';
+import 'package:did_i_attend/src/platform/background/open_background_services.dart';
 import 'package:workmanager/workmanager.dart';
 
 @pragma('vm:entry-point')

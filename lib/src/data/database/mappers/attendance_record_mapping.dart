@@ -1,8 +1,8 @@
-import 'package:did_i_assist/src/data/database/app_database.dart';
-import 'package:did_i_assist/src/data/database/mappers/date_mapping.dart';
-import 'package:did_i_assist/src/domain/models/attendance_record.dart';
-import 'package:did_i_assist/src/domain/models/attendance_source.dart';
-import 'package:did_i_assist/src/domain/models/attendance_status.dart';
+import 'package:did_i_attend/src/data/database/app_database.dart';
+import 'package:did_i_attend/src/data/database/mappers/date_mapping.dart';
+import 'package:did_i_attend/src/domain/models/attendance_record.dart';
+import 'package:did_i_attend/src/domain/models/attendance_source.dart';
+import 'package:did_i_attend/src/domain/models/attendance_status.dart';
 import 'package:drift/drift.dart';
 
 AttendanceRecord attendanceRecordFromRow(AttendanceRecordRow row) =>

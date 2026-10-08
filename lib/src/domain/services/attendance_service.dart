@@ -1,13 +1,13 @@
 import 'package:clock/clock.dart';
-import 'package:did_i_assist/src/core/local_date.dart';
-import 'package:did_i_assist/src/domain/models/models.dart';
-import 'package:did_i_assist/src/domain/repositories/attendance_repository.dart';
-import 'package:did_i_assist/src/domain/repositories/course_repository.dart';
-import 'package:did_i_assist/src/domain/repositories/location_event_repository.dart';
-import 'package:did_i_assist/src/domain/repositories/place_repository.dart';
-import 'package:did_i_assist/src/domain/repositories/settings_repository.dart';
-import 'package:did_i_assist/src/domain/services/attendance_evaluator.dart';
-import 'package:did_i_assist/src/domain/services/schedule_resolver.dart';
+import 'package:did_i_attend/src/core/local_date.dart';
+import 'package:did_i_attend/src/domain/models/models.dart';
+import 'package:did_i_attend/src/domain/repositories/attendance_repository.dart';
+import 'package:did_i_attend/src/domain/repositories/course_repository.dart';
+import 'package:did_i_attend/src/domain/repositories/location_event_repository.dart';
+import 'package:did_i_attend/src/domain/repositories/place_repository.dart';
+import 'package:did_i_attend/src/domain/repositories/settings_repository.dart';
+import 'package:did_i_attend/src/domain/services/attendance_evaluator.dart';
+import 'package:did_i_attend/src/domain/services/schedule_resolver.dart';
 import 'package:uuid/uuid.dart';
 
 final class AttendanceService {

@@ -1,4 +1,4 @@
-package com.didiassist.app
+package com.didiattend.app
 
 import io.flutter.embedding.android.FlutterActivity
 

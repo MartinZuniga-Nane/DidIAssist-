@@ -1,10 +1,10 @@
-import 'package:did_i_assist/src/data/database/app_database.dart';
-import 'package:did_i_assist/src/data/database/mappers/course_mapping.dart';
-import 'package:did_i_assist/src/data/database/mappers/schedule_slot_mapping.dart';
-import 'package:did_i_assist/src/data/database/tables.dart';
-import 'package:did_i_assist/src/domain/models/course.dart';
-import 'package:did_i_assist/src/domain/models/schedule_slot.dart';
-import 'package:did_i_assist/src/domain/repositories/course_repository.dart';
+import 'package:did_i_attend/src/data/database/app_database.dart';
+import 'package:did_i_attend/src/data/database/mappers/course_mapping.dart';
+import 'package:did_i_attend/src/data/database/mappers/schedule_slot_mapping.dart';
+import 'package:did_i_attend/src/data/database/tables.dart';
+import 'package:did_i_attend/src/domain/models/course.dart';
+import 'package:did_i_attend/src/domain/models/schedule_slot.dart';
+import 'package:did_i_attend/src/domain/repositories/course_repository.dart';
 import 'package:drift/drift.dart';
 
 final class DriftCourseRepository implements CourseRepository {

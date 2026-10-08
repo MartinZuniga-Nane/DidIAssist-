@@ -1,7 +1,7 @@
-import 'package:did_i_assist/src/data/database/app_database.dart';
-import 'package:did_i_assist/src/data/database/mappers/date_mapping.dart';
-import 'package:did_i_assist/src/domain/repositories/class_sample_schedule_store.dart';
-import 'package:did_i_assist/src/domain/services/class_sample_planner.dart';
+import 'package:did_i_attend/src/data/database/app_database.dart';
+import 'package:did_i_attend/src/data/database/mappers/date_mapping.dart';
+import 'package:did_i_attend/src/domain/repositories/class_sample_schedule_store.dart';
+import 'package:did_i_attend/src/domain/services/class_sample_planner.dart';
 import 'package:drift/drift.dart';
 
 final class DriftClassSampleScheduleStore implements ClassSampleScheduleStore {

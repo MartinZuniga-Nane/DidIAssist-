@@ -1,5 +1,5 @@
-import 'package:did_i_assist/src/domain/location/geofence_registration_id.dart';
-import 'package:did_i_assist/src/domain/models/place.dart';
+import 'package:did_i_attend/src/domain/location/geofence_registration_id.dart';
+import 'package:did_i_attend/src/domain/models/place.dart';
 import 'package:native_geofence/native_geofence.dart' as native;
 
 import '../domain/services/fixtures.dart';

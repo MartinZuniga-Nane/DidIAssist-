@@ -1,14 +1,14 @@
 import 'package:clock/clock.dart';
-import 'package:did_i_assist/src/core/geo_point.dart';
-import 'package:did_i_assist/src/domain/models/class_occurrence.dart';
-import 'package:did_i_assist/src/domain/models/place_kind.dart';
-import 'package:did_i_assist/src/domain/models/trip.dart';
-import 'package:did_i_assist/src/domain/repositories/place_repository.dart';
-import 'package:did_i_assist/src/domain/repositories/settings_repository.dart';
-import 'package:did_i_assist/src/domain/repositories/trip_repository.dart';
-import 'package:did_i_assist/src/domain/services/commute_learner.dart';
-import 'package:did_i_assist/src/domain/services/departure_advisor.dart';
-import 'package:did_i_assist/src/domain/services/eta_estimator.dart';
+import 'package:did_i_attend/src/core/geo_point.dart';
+import 'package:did_i_attend/src/domain/models/class_occurrence.dart';
+import 'package:did_i_attend/src/domain/models/place_kind.dart';
+import 'package:did_i_attend/src/domain/models/trip.dart';
+import 'package:did_i_attend/src/domain/repositories/place_repository.dart';
+import 'package:did_i_attend/src/domain/repositories/settings_repository.dart';
+import 'package:did_i_attend/src/domain/repositories/trip_repository.dart';
+import 'package:did_i_attend/src/domain/services/commute_learner.dart';
+import 'package:did_i_attend/src/domain/services/departure_advisor.dart';
+import 'package:did_i_attend/src/domain/services/eta_estimator.dart';
 
 final class DepartureService {
   DepartureService({

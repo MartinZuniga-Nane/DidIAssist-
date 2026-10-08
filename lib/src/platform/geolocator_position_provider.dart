@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:did_i_assist/src/core/geo_point.dart';
-import 'package:did_i_assist/src/domain/location/position_fix.dart';
-import 'package:did_i_assist/src/domain/location/position_provider.dart';
+import 'package:did_i_attend/src/core/geo_point.dart';
+import 'package:did_i_attend/src/domain/location/position_fix.dart';
+import 'package:did_i_attend/src/domain/location/position_provider.dart';
 import 'package:geolocator/geolocator.dart' as geo;
 
 final class GeolocatorPositionProvider implements PositionProvider {

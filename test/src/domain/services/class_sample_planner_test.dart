@@ -1,6 +1,6 @@
-import 'package:did_i_assist/src/core/local_date.dart';
-import 'package:did_i_assist/src/domain/models/models.dart';
-import 'package:did_i_assist/src/domain/services/class_sample_planner.dart';
+import 'package:did_i_attend/src/core/local_date.dart';
+import 'package:did_i_attend/src/domain/models/models.dart';
+import 'package:did_i_attend/src/domain/services/class_sample_planner.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'fixtures.dart';
@@ -17,8 +17,8 @@ void main() {
     );
     expect(tasks.map((task) => task.offsetMinutes), [1, 8]);
     expect(tasks.map((task) => task.uniqueName), [
-      'did_i_assist.class_sample.slot.2026-10-05.1',
-      'did_i_assist.class_sample.slot.2026-10-05.8',
+      'did_i_attend.class_sample.slot.2026-10-05.1',
+      'did_i_attend.class_sample.slot.2026-10-05.8',
     ]);
     expect(tasks.first.runAt, DateTime(2026, 10, 5, 9, 1).toUtc());
     expect(tasks.last.runAt, DateTime(2026, 10, 5, 9, 8).toUtc());

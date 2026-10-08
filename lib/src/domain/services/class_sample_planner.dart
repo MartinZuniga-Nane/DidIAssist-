@@ -1,7 +1,7 @@
 import 'dart:math' as math;
 
-import 'package:did_i_assist/src/core/local_date.dart';
-import 'package:did_i_assist/src/domain/models/models.dart';
+import 'package:did_i_attend/src/core/local_date.dart';
+import 'package:did_i_attend/src/domain/models/models.dart';
 import 'package:equatable/equatable.dart';
 
 String _dateText(LocalDate date) =>
@@ -32,7 +32,7 @@ final class ClassSampleTask extends Equatable {
   final DateTime runAt;
 
   String get uniqueName =>
-      'did_i_assist.class_sample.${Uri.encodeComponent(slotId)}.'
+      'did_i_attend.class_sample.${Uri.encodeComponent(slotId)}.'
       '${_dateText(date)}.$offsetMinutes';
 
   @override

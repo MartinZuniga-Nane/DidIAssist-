@@ -1,5 +1,5 @@
-import 'package:did_i_assist/src/domain/models/attendance_status.dart';
-import 'package:did_i_assist/src/domain/services/attendance_evaluation.dart';
+import 'package:did_i_attend/src/domain/models/attendance_status.dart';
+import 'package:did_i_attend/src/domain/services/attendance_evaluation.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

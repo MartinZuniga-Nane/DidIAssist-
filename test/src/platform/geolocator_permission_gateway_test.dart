@@ -1,5 +1,5 @@
-import 'package:did_i_assist/src/domain/location/location_permission_gateway.dart';
-import 'package:did_i_assist/src/platform/geolocator_permission_gateway.dart';
+import 'package:did_i_attend/src/domain/location/location_permission_gateway.dart';
+import 'package:did_i_attend/src/platform/geolocator_permission_gateway.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:geolocator/geolocator.dart' as geo;
 import 'package:mocktail/mocktail.dart';

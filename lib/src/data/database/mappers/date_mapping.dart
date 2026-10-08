@@ -1,4 +1,4 @@
-import 'package:did_i_assist/src/core/local_date.dart';
+import 'package:did_i_attend/src/core/local_date.dart';
 
 String localDateToText(LocalDate date) =>
     '${date.year.toString().padLeft(4, '0')}-'

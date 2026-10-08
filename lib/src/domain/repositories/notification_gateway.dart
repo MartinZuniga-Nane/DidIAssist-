@@ -1,4 +1,4 @@
-import 'package:did_i_assist/src/domain/models/planned_notification.dart';
+import 'package:did_i_attend/src/domain/models/planned_notification.dart';
 
 enum NotificationPermission { granted, denied, unavailable }
 

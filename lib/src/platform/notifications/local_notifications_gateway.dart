@@ -1,8 +1,8 @@
 import 'package:clock/clock.dart';
-import 'package:did_i_assist/src/domain/models/planned_notification.dart';
-import 'package:did_i_assist/src/domain/repositories/notification_gateway.dart';
-import 'package:did_i_assist/src/platform/notifications/notification_message_builder.dart';
-import 'package:did_i_assist/src/platform/notifications/notification_payload_codec.dart';
+import 'package:did_i_attend/src/domain/models/planned_notification.dart';
+import 'package:did_i_attend/src/domain/repositories/notification_gateway.dart';
+import 'package:did_i_attend/src/platform/notifications/notification_message_builder.dart';
+import 'package:did_i_attend/src/platform/notifications/notification_payload_codec.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:timezone/data/latest_all.dart' as tz_data;

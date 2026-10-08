@@ -1,11 +1,11 @@
-import 'package:did_i_assist/src/core/local_date.dart';
-import 'package:did_i_assist/src/data/database/app_database.dart';
-import 'package:did_i_assist/src/data/database/mappers/attendance_record_mapping.dart';
-import 'package:did_i_assist/src/data/database/mappers/date_mapping.dart';
-import 'package:did_i_assist/src/data/database/tables.dart';
-import 'package:did_i_assist/src/domain/models/attendance_record.dart';
-import 'package:did_i_assist/src/domain/models/attendance_source.dart';
-import 'package:did_i_assist/src/domain/repositories/attendance_repository.dart';
+import 'package:did_i_attend/src/core/local_date.dart';
+import 'package:did_i_attend/src/data/database/app_database.dart';
+import 'package:did_i_attend/src/data/database/mappers/attendance_record_mapping.dart';
+import 'package:did_i_attend/src/data/database/mappers/date_mapping.dart';
+import 'package:did_i_attend/src/data/database/tables.dart';
+import 'package:did_i_attend/src/domain/models/attendance_record.dart';
+import 'package:did_i_attend/src/domain/models/attendance_source.dart';
+import 'package:did_i_attend/src/domain/repositories/attendance_repository.dart';
 import 'package:drift/drift.dart';
 
 final class DriftAttendanceRepository implements AttendanceRepository {

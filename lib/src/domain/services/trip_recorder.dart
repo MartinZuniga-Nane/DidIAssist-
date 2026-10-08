@@ -1,10 +1,10 @@
 import 'package:clock/clock.dart';
-import 'package:did_i_assist/src/domain/models/model_validation.dart';
-import 'package:did_i_assist/src/domain/models/trip.dart';
-import 'package:did_i_assist/src/domain/repositories/location_event_repository.dart';
-import 'package:did_i_assist/src/domain/repositories/place_repository.dart';
-import 'package:did_i_assist/src/domain/repositories/trip_repository.dart';
-import 'package:did_i_assist/src/domain/services/trip_detector.dart';
+import 'package:did_i_attend/src/domain/models/model_validation.dart';
+import 'package:did_i_attend/src/domain/models/trip.dart';
+import 'package:did_i_attend/src/domain/repositories/location_event_repository.dart';
+import 'package:did_i_attend/src/domain/repositories/place_repository.dart';
+import 'package:did_i_attend/src/domain/repositories/trip_repository.dart';
+import 'package:did_i_attend/src/domain/services/trip_detector.dart';
 
 final class TripRecorder {
   TripRecorder({

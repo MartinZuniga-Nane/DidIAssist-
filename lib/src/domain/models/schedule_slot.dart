@@ -1,4 +1,4 @@
-import 'package:did_i_assist/src/domain/models/model_validation.dart';
+import 'package:did_i_attend/src/domain/models/model_validation.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 

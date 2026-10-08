@@ -1,4 +1,4 @@
-import 'package:did_i_assist/src/domain/models/location_event.dart';
+import 'package:did_i_attend/src/domain/models/location_event.dart';
 
 abstract interface class LocationEventRepository {
   /// Appends without replacing existing evidence; duplicate IDs are idempotent.

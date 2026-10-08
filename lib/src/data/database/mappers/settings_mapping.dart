@@ -1,7 +1,7 @@
-import 'package:did_i_assist/src/data/database/app_database.dart';
-import 'package:did_i_assist/src/domain/models/attendance_policy.dart';
-import 'package:did_i_assist/src/domain/models/travel_mode.dart';
-import 'package:did_i_assist/src/domain/models/user_settings.dart';
+import 'package:did_i_attend/src/data/database/app_database.dart';
+import 'package:did_i_attend/src/domain/models/attendance_policy.dart';
+import 'package:did_i_attend/src/domain/models/travel_mode.dart';
+import 'package:did_i_attend/src/domain/models/user_settings.dart';
 import 'package:drift/drift.dart';
 
 UserSettings settingsFromRow(UserSettingsRow row) => UserSettings(

@@ -1,7 +1,7 @@
-import 'package:did_i_assist/src/data/database/app_database.dart';
-import 'package:did_i_assist/src/data/database/mappers/settings_mapping.dart';
-import 'package:did_i_assist/src/domain/models/user_settings.dart';
-import 'package:did_i_assist/src/domain/repositories/settings_repository.dart';
+import 'package:did_i_attend/src/data/database/app_database.dart';
+import 'package:did_i_attend/src/data/database/mappers/settings_mapping.dart';
+import 'package:did_i_attend/src/domain/models/user_settings.dart';
+import 'package:did_i_attend/src/domain/repositories/settings_repository.dart';
 
 final class DriftSettingsRepository implements SettingsRepository {
   DriftSettingsRepository(this._database);

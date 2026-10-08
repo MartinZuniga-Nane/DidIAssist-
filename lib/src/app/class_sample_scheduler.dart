@@ -1,12 +1,12 @@
 import 'package:clock/clock.dart';
-import 'package:did_i_assist/src/core/local_date.dart';
-import 'package:did_i_assist/src/domain/repositories/class_sample_schedule_store.dart';
-import 'package:did_i_assist/src/domain/repositories/class_sample_task_gateway.dart';
-import 'package:did_i_assist/src/domain/repositories/course_repository.dart';
-import 'package:did_i_assist/src/domain/repositories/place_repository.dart';
-import 'package:did_i_assist/src/domain/repositories/settings_repository.dart';
-import 'package:did_i_assist/src/domain/services/class_sample_planner.dart';
-import 'package:did_i_assist/src/domain/services/schedule_resolver.dart';
+import 'package:did_i_attend/src/core/local_date.dart';
+import 'package:did_i_attend/src/domain/repositories/class_sample_schedule_store.dart';
+import 'package:did_i_attend/src/domain/repositories/class_sample_task_gateway.dart';
+import 'package:did_i_attend/src/domain/repositories/course_repository.dart';
+import 'package:did_i_attend/src/domain/repositories/place_repository.dart';
+import 'package:did_i_attend/src/domain/repositories/settings_repository.dart';
+import 'package:did_i_attend/src/domain/services/class_sample_planner.dart';
+import 'package:did_i_attend/src/domain/services/schedule_resolver.dart';
 
 final class ClassSampleScheduler {
   const ClassSampleScheduler({

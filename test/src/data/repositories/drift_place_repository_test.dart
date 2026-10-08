@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:did_i_assist/src/data/database/app_database.dart';
-import 'package:did_i_assist/src/data/database/mappers/course_mapping.dart';
-import 'package:did_i_assist/src/data/database/mappers/schedule_slot_mapping.dart';
-import 'package:did_i_assist/src/data/repositories/drift_place_repository.dart';
-import 'package:did_i_assist/src/data/repositories/place_in_use_exception.dart';
-import 'package:did_i_assist/src/domain/models/place.dart';
+import 'package:did_i_attend/src/data/database/app_database.dart';
+import 'package:did_i_attend/src/data/database/mappers/course_mapping.dart';
+import 'package:did_i_attend/src/data/database/mappers/schedule_slot_mapping.dart';
+import 'package:did_i_attend/src/data/repositories/drift_place_repository.dart';
+import 'package:did_i_attend/src/data/repositories/place_in_use_exception.dart';
+import 'package:did_i_attend/src/domain/models/place.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../domain/models/fixtures.dart';

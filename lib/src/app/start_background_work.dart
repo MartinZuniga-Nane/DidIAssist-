@@ -1,6 +1,6 @@
-import 'package:did_i_assist/src/app/app_error_handler.dart';
-import 'package:did_i_assist/src/app/app_services.dart';
-import 'package:did_i_assist/src/platform/background/background_scheduler.dart';
+import 'package:did_i_attend/src/app/app_error_handler.dart';
+import 'package:did_i_attend/src/app/app_services.dart';
+import 'package:did_i_attend/src/platform/background/background_scheduler.dart';
 
 Future<void> startBackgroundWork(
   AppServices services, {

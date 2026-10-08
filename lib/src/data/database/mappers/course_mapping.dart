@@ -1,6 +1,6 @@
-import 'package:did_i_assist/src/data/database/app_database.dart';
-import 'package:did_i_assist/src/data/database/mappers/date_mapping.dart';
-import 'package:did_i_assist/src/domain/models/course.dart';
+import 'package:did_i_attend/src/data/database/app_database.dart';
+import 'package:did_i_attend/src/data/database/mappers/date_mapping.dart';
+import 'package:did_i_attend/src/domain/models/course.dart';
 import 'package:drift/drift.dart';
 
 Course courseFromRow(CourseRow row) => Course(

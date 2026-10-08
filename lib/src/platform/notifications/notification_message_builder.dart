@@ -1,8 +1,8 @@
-import 'package:did_i_assist/src/domain/models/attendance_record.dart';
-import 'package:did_i_assist/src/domain/models/attendance_status.dart';
-import 'package:did_i_assist/src/domain/models/planned_notification.dart';
-import 'package:did_i_assist/src/l10n/generated/app_localizations.dart';
-import 'package:did_i_assist/src/platform/notifications/notification_message.dart';
+import 'package:did_i_attend/src/domain/models/attendance_record.dart';
+import 'package:did_i_attend/src/domain/models/attendance_status.dart';
+import 'package:did_i_attend/src/domain/models/planned_notification.dart';
+import 'package:did_i_attend/src/l10n/generated/app_localizations.dart';
+import 'package:did_i_attend/src/platform/notifications/notification_message.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';

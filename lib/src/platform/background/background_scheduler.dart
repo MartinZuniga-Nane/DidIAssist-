@@ -1,5 +1,5 @@
-import 'package:did_i_assist/src/platform/background/background_task_names.dart';
-import 'package:did_i_assist/src/platform/background/callback_dispatcher.dart';
+import 'package:did_i_attend/src/platform/background/background_task_names.dart';
+import 'package:did_i_attend/src/platform/background/callback_dispatcher.dart';
 import 'package:workmanager/workmanager.dart';
 
 final class BackgroundScheduler {

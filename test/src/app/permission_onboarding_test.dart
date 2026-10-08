@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:did_i_assist/src/app/permission_onboarding.dart';
-import 'package:did_i_assist/src/domain/location/location_permission_gateway.dart';
-import 'package:did_i_assist/src/domain/repositories/notification_gateway.dart';
+import 'package:did_i_attend/src/app/permission_onboarding.dart';
+import 'package:did_i_attend/src/domain/location/location_permission_gateway.dart';
+import 'package:did_i_attend/src/domain/repositories/notification_gateway.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

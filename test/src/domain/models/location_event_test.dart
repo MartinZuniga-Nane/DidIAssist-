@@ -1,5 +1,5 @@
-import 'package:did_i_assist/src/core/geo_point.dart';
-import 'package:did_i_assist/src/domain/models/models.dart';
+import 'package:did_i_attend/src/core/geo_point.dart';
+import 'package:did_i_attend/src/domain/models/models.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'fixtures.dart';

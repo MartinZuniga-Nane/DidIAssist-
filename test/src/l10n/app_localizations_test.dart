@@ -1,4 +1,4 @@
-import 'package:did_i_assist/src/l10n/generated/app_localizations.dart';
+import 'package:did_i_attend/src/l10n/generated/app_localizations.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 

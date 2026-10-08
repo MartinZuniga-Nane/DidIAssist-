@@ -1,8 +1,8 @@
-import 'package:did_i_assist/src/core/geo.dart';
-import 'package:did_i_assist/src/core/geo_point.dart';
-import 'package:did_i_assist/src/domain/models/place.dart';
-import 'package:did_i_assist/src/domain/services/departure_advisor.dart';
-import 'package:did_i_assist/src/domain/services/eta_estimator.dart';
+import 'package:did_i_attend/src/core/geo.dart';
+import 'package:did_i_attend/src/core/geo_point.dart';
+import 'package:did_i_attend/src/domain/models/place.dart';
+import 'package:did_i_attend/src/domain/services/departure_advisor.dart';
+import 'package:did_i_attend/src/domain/services/eta_estimator.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'fixtures.dart';

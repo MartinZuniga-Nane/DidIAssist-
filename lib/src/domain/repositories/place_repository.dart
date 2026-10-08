@@ -1,4 +1,4 @@
-import 'package:did_i_assist/src/domain/models/place.dart';
+import 'package:did_i_attend/src/domain/models/place.dart';
 
 abstract interface class PlaceRepository {
   Future<Place?> getById(String id);

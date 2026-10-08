@@ -1,4 +1,4 @@
-import 'package:did_i_assist/src/domain/location/position_fix.dart';
+import 'package:did_i_attend/src/domain/location/position_fix.dart';
 
 enum PositionFailureReason { timeout, permissionDenied, serviceDisabled }
 

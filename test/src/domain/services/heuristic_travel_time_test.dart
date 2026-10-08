@@ -1,6 +1,6 @@
-import 'package:did_i_assist/src/core/geo.dart';
-import 'package:did_i_assist/src/domain/models/travel_mode.dart';
-import 'package:did_i_assist/src/domain/services/heuristic_travel_time.dart';
+import 'package:did_i_attend/src/core/geo.dart';
+import 'package:did_i_attend/src/domain/models/travel_mode.dart';
+import 'package:did_i_attend/src/domain/services/heuristic_travel_time.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'fixtures.dart';

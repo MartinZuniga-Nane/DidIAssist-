@@ -1,5 +1,5 @@
-import 'package:did_i_assist/src/domain/models/location_event_type.dart';
-import 'package:did_i_assist/src/platform/native_geofence_mapper.dart';
+import 'package:did_i_attend/src/domain/models/location_event_type.dart';
+import 'package:did_i_attend/src/platform/native_geofence_mapper.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:native_geofence/native_geofence.dart' as native;
 
@@ -50,7 +50,7 @@ void main() {
           activeGeofence(place: homePlace()),
           activeGeofence(),
           activeGeofence(registrationId: 'other-feature:zone'),
-          activeGeofence(registrationId: 'didiassist:v1:malformed'),
+          activeGeofence(registrationId: 'didiattend:v1:malformed'),
         ],
       ),
       receivedAt: receipt,

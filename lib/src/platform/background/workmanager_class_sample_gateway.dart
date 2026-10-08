@@ -1,8 +1,8 @@
 import 'package:clock/clock.dart';
-import 'package:did_i_assist/src/data/database/mappers/date_mapping.dart';
-import 'package:did_i_assist/src/domain/repositories/class_sample_task_gateway.dart';
-import 'package:did_i_assist/src/domain/services/class_sample_planner.dart';
-import 'package:did_i_assist/src/platform/background/background_task_names.dart';
+import 'package:did_i_attend/src/data/database/mappers/date_mapping.dart';
+import 'package:did_i_attend/src/domain/repositories/class_sample_task_gateway.dart';
+import 'package:did_i_attend/src/domain/services/class_sample_planner.dart';
+import 'package:did_i_attend/src/platform/background/background_task_names.dart';
 import 'package:workmanager/workmanager.dart';
 
 final class WorkmanagerClassSampleGateway implements ClassSampleTaskGateway {

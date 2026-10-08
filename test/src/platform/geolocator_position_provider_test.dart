@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:did_i_assist/src/domain/location/position_provider.dart';
-import 'package:did_i_assist/src/platform/geolocator_position_provider.dart';
+import 'package:did_i_attend/src/domain/location/position_provider.dart';
+import 'package:did_i_attend/src/platform/geolocator_position_provider.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:geolocator/geolocator.dart' as geo;
 import 'package:mocktail/mocktail.dart';

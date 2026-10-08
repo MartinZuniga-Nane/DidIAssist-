@@ -1,9 +1,9 @@
-import 'package:did_i_assist/src/data/database/app_database.dart';
-import 'package:did_i_assist/src/data/database/mappers/date_mapping.dart';
-import 'package:did_i_assist/src/data/database/mappers/location_event_mapping.dart';
-import 'package:did_i_assist/src/domain/models/location_event.dart';
-import 'package:did_i_assist/src/domain/models/location_event_type.dart';
-import 'package:did_i_assist/src/domain/repositories/location_event_repository.dart';
+import 'package:did_i_attend/src/data/database/app_database.dart';
+import 'package:did_i_attend/src/data/database/mappers/date_mapping.dart';
+import 'package:did_i_attend/src/data/database/mappers/location_event_mapping.dart';
+import 'package:did_i_attend/src/domain/models/location_event.dart';
+import 'package:did_i_attend/src/domain/models/location_event_type.dart';
+import 'package:did_i_attend/src/domain/repositories/location_event_repository.dart';
 import 'package:drift/drift.dart';
 
 final class DriftLocationEventRepository implements LocationEventRepository {

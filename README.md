@@ -1,4 +1,4 @@
-# DidIAssist
+# DidIAttend
 
 A local-first mobile app that automatically records your class attendance.
 

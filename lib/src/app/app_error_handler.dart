@@ -5,7 +5,7 @@ void reportAppError(Object error, StackTrace stackTrace) {
     FlutterErrorDetails(
       exception: error,
       stack: stackTrace,
-      library: 'DidIAssist startup',
+      library: 'DidIAttend startup',
     ),
   );
 }

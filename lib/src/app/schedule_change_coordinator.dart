@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:did_i_assist/src/domain/repositories/course_repository.dart';
-import 'package:did_i_assist/src/domain/repositories/place_repository.dart';
-import 'package:did_i_assist/src/domain/repositories/settings_repository.dart';
+import 'package:did_i_attend/src/domain/repositories/course_repository.dart';
+import 'package:did_i_attend/src/domain/repositories/place_repository.dart';
+import 'package:did_i_attend/src/domain/repositories/settings_repository.dart';
 
 final class ScheduleChangeCoordinator {
   ScheduleChangeCoordinator({

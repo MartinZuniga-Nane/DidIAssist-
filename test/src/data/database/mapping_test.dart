@@ -1,14 +1,14 @@
-import 'package:did_i_assist/src/core/local_date.dart';
-import 'package:did_i_assist/src/data/database/app_database.dart';
-import 'package:did_i_assist/src/data/database/mappers/attendance_record_mapping.dart';
-import 'package:did_i_assist/src/data/database/mappers/course_mapping.dart';
-import 'package:did_i_assist/src/data/database/mappers/date_mapping.dart';
-import 'package:did_i_assist/src/data/database/mappers/location_event_mapping.dart';
-import 'package:did_i_assist/src/data/database/mappers/place_mapping.dart';
-import 'package:did_i_assist/src/data/database/mappers/schedule_slot_mapping.dart';
-import 'package:did_i_assist/src/data/database/mappers/settings_mapping.dart';
-import 'package:did_i_assist/src/data/database/mappers/trip_mapping.dart';
-import 'package:did_i_assist/src/domain/models/models.dart';
+import 'package:did_i_attend/src/core/local_date.dart';
+import 'package:did_i_attend/src/data/database/app_database.dart';
+import 'package:did_i_attend/src/data/database/mappers/attendance_record_mapping.dart';
+import 'package:did_i_attend/src/data/database/mappers/course_mapping.dart';
+import 'package:did_i_attend/src/data/database/mappers/date_mapping.dart';
+import 'package:did_i_attend/src/data/database/mappers/location_event_mapping.dart';
+import 'package:did_i_attend/src/data/database/mappers/place_mapping.dart';
+import 'package:did_i_attend/src/data/database/mappers/schedule_slot_mapping.dart';
+import 'package:did_i_attend/src/data/database/mappers/settings_mapping.dart';
+import 'package:did_i_attend/src/data/database/mappers/trip_mapping.dart';
+import 'package:did_i_attend/src/domain/models/models.dart';
 import 'package:drift/drift.dart';
 import 'package:flutter_test/flutter_test.dart';
 

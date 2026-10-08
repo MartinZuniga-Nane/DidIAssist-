@@ -1,4 +1,4 @@
-import 'package:did_i_assist/src/domain/location/location_permission_gateway.dart';
+import 'package:did_i_attend/src/domain/location/location_permission_gateway.dart';
 import 'package:geolocator/geolocator.dart' as geo;
 import 'package:permission_handler/permission_handler.dart' as permissions;
 

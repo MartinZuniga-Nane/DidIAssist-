@@ -1,8 +1,8 @@
 import 'dart:math' as math;
 
-import 'package:did_i_assist/src/core/geo.dart';
-import 'package:did_i_assist/src/domain/models/models.dart';
-import 'package:did_i_assist/src/domain/services/attendance_evaluation.dart';
+import 'package:did_i_attend/src/core/geo.dart';
+import 'package:did_i_attend/src/domain/models/models.dart';
+import 'package:did_i_attend/src/domain/services/attendance_evaluation.dart';
 
 final class AttendanceEvaluator {
   AttendanceEvaluator({this.carryOver = const Duration(hours: 12)}) {

@@ -1,4 +1,4 @@
-import 'package:did_i_assist/src/core/local_time.dart';
+import 'package:did_i_attend/src/core/local_time.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 

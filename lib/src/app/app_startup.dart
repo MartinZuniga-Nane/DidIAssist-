@@ -1,13 +1,13 @@
 import 'dart:async';
 
-import 'package:did_i_assist/src/app/app_error_handler.dart';
-import 'package:did_i_assist/src/app/app_services.dart';
-import 'package:did_i_assist/src/app/open_app_services.dart';
-import 'package:did_i_assist/src/app/schedule_change_coordinator.dart';
-import 'package:did_i_assist/src/app/start_background_work.dart';
-import 'package:did_i_assist/src/domain/repositories/notification_gateway.dart';
-import 'package:did_i_assist/src/platform/notifications/create_notification_gateway.dart';
-import 'package:did_i_assist/src/platform/notifications/lazy_notification_gateway.dart';
+import 'package:did_i_attend/src/app/app_error_handler.dart';
+import 'package:did_i_attend/src/app/app_services.dart';
+import 'package:did_i_attend/src/app/open_app_services.dart';
+import 'package:did_i_attend/src/app/schedule_change_coordinator.dart';
+import 'package:did_i_attend/src/app/start_background_work.dart';
+import 'package:did_i_attend/src/domain/repositories/notification_gateway.dart';
+import 'package:did_i_attend/src/platform/notifications/create_notification_gateway.dart';
+import 'package:did_i_attend/src/platform/notifications/lazy_notification_gateway.dart';
 import 'package:flutter/widgets.dart';
 
 final class AppStartup with WidgetsBindingObserver {

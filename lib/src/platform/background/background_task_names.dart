@@ -1,4 +1,4 @@
 abstract final class BackgroundTaskNames {
-  static const periodic = 'com.didiassist.app.periodic_sync';
-  static const classSample = 'com.didiassist.app.class_sample';
+  static const periodic = 'com.didiattend.app.periodic_sync';
+  static const classSample = 'com.didiattend.app.class_sample';
 }

@@ -1,5 +1,5 @@
-import 'package:did_i_assist/src/domain/models/planned_notification.dart';
-import 'package:did_i_assist/src/domain/repositories/notification_gateway.dart';
+import 'package:did_i_attend/src/domain/models/planned_notification.dart';
+import 'package:did_i_attend/src/domain/repositories/notification_gateway.dart';
 
 /// Defers platform setup until after evidence has been persisted.
 final class LazyNotificationGateway implements NotificationGateway {

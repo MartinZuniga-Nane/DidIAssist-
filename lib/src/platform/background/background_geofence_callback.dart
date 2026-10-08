@@ -1,6 +1,6 @@
-import 'package:did_i_assist/src/app/app_services.dart';
-import 'package:did_i_assist/src/platform/background/open_background_services.dart';
-import 'package:did_i_assist/src/platform/background_location_callback.dart';
+import 'package:did_i_attend/src/app/app_services.dart';
+import 'package:did_i_attend/src/platform/background/open_background_services.dart';
+import 'package:did_i_attend/src/platform/background_location_callback.dart';
 import 'package:native_geofence/native_geofence.dart';
 
 Future<void> _pending = Future<void>.value();

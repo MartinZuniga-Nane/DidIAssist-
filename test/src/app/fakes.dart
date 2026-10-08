@@ -1,13 +1,13 @@
-import 'package:did_i_assist/src/domain/location/geofence_registrar.dart';
-import 'package:did_i_assist/src/domain/location/geofence_registration_id.dart';
-import 'package:did_i_assist/src/domain/location/location_permission_gateway.dart';
-import 'package:did_i_assist/src/domain/location/position_fix.dart';
-import 'package:did_i_assist/src/domain/location/position_provider.dart';
-import 'package:did_i_assist/src/domain/models/place.dart';
-import 'package:did_i_assist/src/domain/models/planned_notification.dart';
-import 'package:did_i_assist/src/domain/repositories/class_sample_task_gateway.dart';
-import 'package:did_i_assist/src/domain/repositories/notification_gateway.dart';
-import 'package:did_i_assist/src/domain/services/class_sample_planner.dart';
+import 'package:did_i_attend/src/domain/location/geofence_registrar.dart';
+import 'package:did_i_attend/src/domain/location/geofence_registration_id.dart';
+import 'package:did_i_attend/src/domain/location/location_permission_gateway.dart';
+import 'package:did_i_attend/src/domain/location/position_fix.dart';
+import 'package:did_i_attend/src/domain/location/position_provider.dart';
+import 'package:did_i_attend/src/domain/models/place.dart';
+import 'package:did_i_attend/src/domain/models/planned_notification.dart';
+import 'package:did_i_attend/src/domain/repositories/class_sample_task_gateway.dart';
+import 'package:did_i_attend/src/domain/repositories/notification_gateway.dart';
+import 'package:did_i_attend/src/domain/services/class_sample_planner.dart';
 
 final class FakeGeofenceRegistrar implements GeofenceRegistrar {
   final ids = <String>{};

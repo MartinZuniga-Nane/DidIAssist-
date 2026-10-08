@@ -1,11 +1,11 @@
-import 'package:did_i_assist/src/domain/models/attendance_record.dart';
-import 'package:did_i_assist/src/domain/models/attendance_source.dart';
-import 'package:did_i_assist/src/domain/models/attendance_status.dart';
-import 'package:did_i_assist/src/domain/models/planned_notification.dart';
-import 'package:did_i_assist/src/domain/repositories/course_repository.dart';
-import 'package:did_i_assist/src/domain/repositories/notification_gateway.dart';
-import 'package:did_i_assist/src/domain/repositories/settings_repository.dart';
-import 'package:did_i_assist/src/domain/services/notification_id.dart';
+import 'package:did_i_attend/src/domain/models/attendance_record.dart';
+import 'package:did_i_attend/src/domain/models/attendance_source.dart';
+import 'package:did_i_attend/src/domain/models/attendance_status.dart';
+import 'package:did_i_attend/src/domain/models/planned_notification.dart';
+import 'package:did_i_attend/src/domain/repositories/course_repository.dart';
+import 'package:did_i_attend/src/domain/repositories/notification_gateway.dart';
+import 'package:did_i_attend/src/domain/repositories/settings_repository.dart';
+import 'package:did_i_attend/src/domain/services/notification_id.dart';
 
 final class AttendanceNotifier {
   AttendanceNotifier({

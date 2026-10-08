@@ -1,5 +1,5 @@
-import 'package:did_i_assist/src/core/local_date.dart';
-import 'package:did_i_assist/src/domain/models/attendance_record.dart';
+import 'package:did_i_attend/src/core/local_date.dart';
+import 'package:did_i_attend/src/domain/models/attendance_record.dart';
 
 abstract interface class AttendanceRepository {
   Future<AttendanceRecord?> findBySlotAndDate(

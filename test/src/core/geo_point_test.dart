@@ -1,4 +1,4 @@
-import 'package:did_i_assist/src/core/geo_point.dart';
+import 'package:did_i_attend/src/core/geo_point.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 GeoPoint samplePoint() => GeoPoint(latitude: 48.8584, longitude: 2.2945);

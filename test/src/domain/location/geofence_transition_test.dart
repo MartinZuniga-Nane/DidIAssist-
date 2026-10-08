@@ -1,6 +1,6 @@
-import 'package:did_i_assist/src/domain/location/geofence_transition.dart';
-import 'package:did_i_assist/src/domain/location/position_fix.dart';
-import 'package:did_i_assist/src/domain/models/location_event_type.dart';
+import 'package:did_i_attend/src/domain/location/geofence_transition.dart';
+import 'package:did_i_attend/src/domain/location/position_fix.dart';
+import 'package:did_i_attend/src/domain/models/location_event_type.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../services/fixtures.dart';

@@ -1,5 +1,5 @@
-import 'package:did_i_assist/src/domain/location/location_permission_gateway.dart';
-import 'package:did_i_assist/src/domain/repositories/notification_gateway.dart';
+import 'package:did_i_attend/src/domain/location/location_permission_gateway.dart';
+import 'package:did_i_attend/src/domain/repositories/notification_gateway.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 

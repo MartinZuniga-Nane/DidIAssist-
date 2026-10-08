@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:did_i_assist/src/core/local_date.dart';
-import 'package:did_i_assist/src/domain/models/model_validation.dart';
-import 'package:did_i_assist/src/domain/models/planned_notification.dart';
+import 'package:did_i_attend/src/core/local_date.dart';
+import 'package:did_i_attend/src/domain/models/model_validation.dart';
+import 'package:did_i_attend/src/domain/models/planned_notification.dart';
 
 int notificationId({
   required NotificationKind kind,

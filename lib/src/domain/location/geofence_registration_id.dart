@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:did_i_assist/src/domain/models/place.dart';
+import 'package:did_i_attend/src/domain/models/place.dart';
 
 /// Stores ownership and geometry in the OS ID, surviving process restarts.
 abstract final class GeofenceRegistrationId {
-  static const _prefix = 'didiassist:v1:';
+  static const _prefix = 'didiattend:v1:';
 
   static String forPlace(Place place) {
     final geometry = ByteData(24)

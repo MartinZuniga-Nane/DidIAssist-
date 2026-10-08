@@ -1,10 +1,10 @@
-import 'package:did_i_assist/src/core/local_date.dart';
-import 'package:did_i_assist/src/domain/location/background_location_handler.dart';
-import 'package:did_i_assist/src/domain/location/geofence_transition.dart';
-import 'package:did_i_assist/src/domain/models/attendance_record.dart';
-import 'package:did_i_assist/src/domain/models/location_event.dart';
-import 'package:did_i_assist/src/domain/models/trip.dart';
-import 'package:did_i_assist/src/domain/services/position_sampler.dart';
+import 'package:did_i_attend/src/core/local_date.dart';
+import 'package:did_i_attend/src/domain/location/background_location_handler.dart';
+import 'package:did_i_attend/src/domain/location/geofence_transition.dart';
+import 'package:did_i_attend/src/domain/models/attendance_record.dart';
+import 'package:did_i_attend/src/domain/models/location_event.dart';
+import 'package:did_i_attend/src/domain/models/trip.dart';
+import 'package:did_i_attend/src/domain/services/position_sampler.dart';
 
 abstract interface class BackgroundOperations {
   Future<List<LocationEvent>> recordTransition(GeofenceTransition transition);

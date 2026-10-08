@@ -1,4 +1,4 @@
-import 'package:did_i_assist/src/domain/services/class_sample_planner.dart';
+import 'package:did_i_attend/src/domain/services/class_sample_planner.dart';
 
 abstract interface class ClassSampleScheduleStore {
   Future<T> synchronized<T>(Future<T> Function() action);

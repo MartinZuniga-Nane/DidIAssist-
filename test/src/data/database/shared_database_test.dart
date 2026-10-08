@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:did_i_assist/src/data/database/app_database.dart';
-import 'package:did_i_assist/src/data/repositories/drift_attendance_repository.dart';
-import 'package:did_i_assist/src/data/repositories/drift_settings_repository.dart';
-import 'package:did_i_assist/src/domain/models/models.dart';
+import 'package:did_i_attend/src/data/database/app_database.dart';
+import 'package:did_i_attend/src/data/repositories/drift_attendance_repository.dart';
+import 'package:did_i_attend/src/data/repositories/drift_settings_repository.dart';
+import 'package:did_i_attend/src/domain/models/models.dart';
 import 'package:drift_flutter/drift_flutter.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:uuid/uuid.dart';

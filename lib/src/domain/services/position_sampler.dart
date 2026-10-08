@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:did_i_assist/src/domain/location/position_fix.dart';
-import 'package:did_i_assist/src/domain/location/position_provider.dart';
-import 'package:did_i_assist/src/domain/models/location_event.dart';
-import 'package:did_i_assist/src/domain/services/location_event_recorder.dart';
+import 'package:did_i_attend/src/domain/location/position_fix.dart';
+import 'package:did_i_attend/src/domain/location/position_provider.dart';
+import 'package:did_i_attend/src/domain/models/location_event.dart';
+import 'package:did_i_attend/src/domain/services/location_event_recorder.dart';
 import 'package:equatable/equatable.dart';
 
 sealed class PositionSampleResult extends Equatable {

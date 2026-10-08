@@ -1,5 +1,5 @@
-import 'package:did_i_assist/src/core/geo_point.dart';
-import 'package:did_i_assist/src/domain/models/models.dart';
+import 'package:did_i_attend/src/core/geo_point.dart';
+import 'package:did_i_attend/src/domain/models/models.dart';
 
 GeoPoint eiffelTower() => GeoPoint(latitude: 48.8584, longitude: 2.2945);
 GeoPoint louvre() => GeoPoint(latitude: 48.8606, longitude: 2.3376);

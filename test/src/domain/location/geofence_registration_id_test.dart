@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:did_i_assist/src/domain/location/geofence_registration_id.dart';
-import 'package:did_i_assist/src/domain/models/place_kind.dart';
+import 'package:did_i_attend/src/domain/location/geofence_registration_id.dart';
+import 'package:did_i_attend/src/domain/models/place_kind.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../services/fixtures.dart';
@@ -49,11 +49,11 @@ void main() {
     for (final id in [
       'home',
       'another-feature:zone',
-      'didiassist:v2:home:geometry',
-      'didiassist:v1:',
-      'didiassist:v1:home:bad',
-      'didiassist:v1:%:bad',
-      'didiassist:v1:home:bad:extra',
+      'didiattend:v2:home:geometry',
+      'didiattend:v1:',
+      'didiattend:v1:home:bad',
+      'didiattend:v1:%:bad',
+      'didiattend:v1:home:bad:extra',
     ]) {
       expect(GeofenceRegistrationId.placeIdFrom(id), isNull);
     }
@@ -68,11 +68,11 @@ void main() {
         ..setFloat64(16, radius);
       final fingerprint = base64Url.encode(data.buffer.asUint8List());
       expect(
-        GeofenceRegistrationId.placeIdFrom('didiassist:v1:home:$fingerprint'),
+        GeofenceRegistrationId.placeIdFrom('didiattend:v1:home:$fingerprint'),
         isNull,
       );
       expect(
-        GeofenceRegistrationId.placeIdFrom('didiassist:v1:%20:$fingerprint'),
+        GeofenceRegistrationId.placeIdFrom('didiattend:v1:%20:$fingerprint'),
         isNull,
       );
     }

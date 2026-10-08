@@ -17,7 +17,7 @@ import workmanager_apple
       GeneratedPluginRegistrant.register(with: registry)
     }
     WorkmanagerPlugin.registerPeriodicTask(
-      withIdentifier: "com.didiassist.app.periodic_sync",
+      withIdentifier: "com.didiattend.app.periodic_sync",
       earliestBeginInSeconds: NSNumber(value: 30 * 60)
     )
     UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate

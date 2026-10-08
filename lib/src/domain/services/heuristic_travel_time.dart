@@ -1,7 +1,7 @@
-import 'package:did_i_assist/src/core/geo.dart';
-import 'package:did_i_assist/src/core/geo_point.dart';
-import 'package:did_i_assist/src/domain/models/model_validation.dart';
-import 'package:did_i_assist/src/domain/models/travel_mode.dart';
+import 'package:did_i_attend/src/core/geo.dart';
+import 'package:did_i_attend/src/core/geo_point.dart';
+import 'package:did_i_attend/src/domain/models/model_validation.dart';
+import 'package:did_i_attend/src/domain/models/travel_mode.dart';
 
 final class HeuristicTravelTime {
   HeuristicTravelTime({

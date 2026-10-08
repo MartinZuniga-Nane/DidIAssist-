@@ -1,4 +1,4 @@
-import 'package:did_i_assist/src/domain/models/place.dart';
+import 'package:did_i_attend/src/domain/models/place.dart';
 
 abstract interface class GeofenceRegistrar {
   /// OS registration IDs, including geofences owned by other features.

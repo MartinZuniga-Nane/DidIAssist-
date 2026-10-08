@@ -1,4 +1,4 @@
-import 'package:did_i_assist/src/domain/models/trip.dart';
+import 'package:did_i_attend/src/domain/models/trip.dart';
 
 abstract interface class TripRepository {
   /// Adds a trip; duplicate IDs are idempotent.

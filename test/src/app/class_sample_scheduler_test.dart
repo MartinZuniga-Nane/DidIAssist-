@@ -1,12 +1,12 @@
 import 'package:clock/clock.dart';
-import 'package:did_i_assist/src/app/class_sample_scheduler.dart';
-import 'package:did_i_assist/src/data/database/app_database.dart';
-import 'package:did_i_assist/src/data/repositories/drift_class_sample_schedule_store.dart';
-import 'package:did_i_assist/src/data/repositories/drift_course_repository.dart';
-import 'package:did_i_assist/src/data/repositories/drift_place_repository.dart';
-import 'package:did_i_assist/src/data/repositories/drift_settings_repository.dart';
-import 'package:did_i_assist/src/domain/models/models.dart';
-import 'package:did_i_assist/src/domain/services/class_sample_planner.dart';
+import 'package:did_i_attend/src/app/class_sample_scheduler.dart';
+import 'package:did_i_attend/src/data/database/app_database.dart';
+import 'package:did_i_attend/src/data/repositories/drift_class_sample_schedule_store.dart';
+import 'package:did_i_attend/src/data/repositories/drift_course_repository.dart';
+import 'package:did_i_attend/src/data/repositories/drift_place_repository.dart';
+import 'package:did_i_attend/src/data/repositories/drift_settings_repository.dart';
+import 'package:did_i_attend/src/domain/models/models.dart';
+import 'package:did_i_attend/src/domain/services/class_sample_planner.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../data/database/test_database.dart';

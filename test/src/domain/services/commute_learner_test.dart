@@ -1,5 +1,5 @@
-import 'package:did_i_assist/src/domain/models/trip.dart';
-import 'package:did_i_assist/src/domain/services/commute_learner.dart';
+import 'package:did_i_attend/src/domain/models/trip.dart';
+import 'package:did_i_attend/src/domain/services/commute_learner.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'fixtures.dart';

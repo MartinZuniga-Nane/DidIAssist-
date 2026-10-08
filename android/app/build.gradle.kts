@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.didiassist.app"
+    namespace = "com.didiattend.app"
     compileSdk = 35
     ndkVersion = "27.0.12077973"
 
@@ -21,7 +21,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.didiassist.app"
+        applicationId = "com.didiattend.app"
         minSdk = 26
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode

@@ -1,12 +1,12 @@
 import 'dart:async';
 
 import 'package:clock/clock.dart';
-import 'package:did_i_assist/src/app/app_services.dart';
-import 'package:did_i_assist/src/app/app_startup.dart';
-import 'package:did_i_assist/src/app/didi_assist_app.dart';
-import 'package:did_i_assist/src/app/open_app_services.dart';
-import 'package:did_i_assist/src/domain/location/position_fix.dart';
-import 'package:did_i_assist/src/domain/repositories/notification_gateway.dart';
+import 'package:did_i_attend/src/app/app_services.dart';
+import 'package:did_i_attend/src/app/app_startup.dart';
+import 'package:did_i_attend/src/app/didi_attend_app.dart';
+import 'package:did_i_attend/src/app/open_app_services.dart';
+import 'package:did_i_attend/src/domain/location/position_fix.dart';
+import 'package:did_i_attend/src/domain/repositories/notification_gateway.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
@@ -230,9 +230,9 @@ void main() {
       createNotifications: () => pending.future,
       openServices: open,
       onError: (error, _) => errors.add(error),
-    )..launch(const DidIAssistApp());
+    )..launch(const DidIAttendApp());
     await tester.pump();
-    expect(find.text('DidIAssist'), findsOneWidget);
+    expect(find.text('DidIAttend'), findsOneWidget);
     expect(startup.services, isNull);
     expect(calls, isEmpty);
     late Future<void> closing;
@@ -244,6 +244,6 @@ void main() {
     await tester.runAsync(() => closing);
     expect(calls, isEmpty);
     expect(errors, isEmpty);
-    expect(() => startup.launch(const DidIAssistApp()), throwsStateError);
+    expect(() => startup.launch(const DidIAttendApp()), throwsStateError);
   });
 }

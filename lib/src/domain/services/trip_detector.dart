@@ -1,9 +1,9 @@
-import 'package:did_i_assist/src/core/local_date.dart';
-import 'package:did_i_assist/src/domain/models/location_event.dart';
-import 'package:did_i_assist/src/domain/models/location_event_type.dart';
-import 'package:did_i_assist/src/domain/models/place.dart';
-import 'package:did_i_assist/src/domain/models/place_kind.dart';
-import 'package:did_i_assist/src/domain/models/trip.dart';
+import 'package:did_i_attend/src/core/local_date.dart';
+import 'package:did_i_attend/src/domain/models/location_event.dart';
+import 'package:did_i_attend/src/domain/models/location_event_type.dart';
+import 'package:did_i_attend/src/domain/models/place.dart';
+import 'package:did_i_attend/src/domain/models/place_kind.dart';
+import 'package:did_i_attend/src/domain/models/trip.dart';
 
 final class TripDetector {
   const TripDetector();

@@ -1,7 +1,7 @@
-import 'package:did_i_assist/src/core/geo_point.dart';
-import 'package:did_i_assist/src/data/database/app_database.dart';
-import 'package:did_i_assist/src/domain/models/place.dart';
-import 'package:did_i_assist/src/domain/models/place_kind.dart';
+import 'package:did_i_attend/src/core/geo_point.dart';
+import 'package:did_i_attend/src/data/database/app_database.dart';
+import 'package:did_i_attend/src/domain/models/place.dart';
+import 'package:did_i_attend/src/domain/models/place_kind.dart';
 
 Place placeFromRow(PlaceRow row) => Place(
   id: row.id,

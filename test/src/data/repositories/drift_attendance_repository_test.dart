@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:did_i_assist/src/core/local_date.dart';
-import 'package:did_i_assist/src/data/database/app_database.dart';
-import 'package:did_i_assist/src/data/repositories/drift_attendance_repository.dart';
-import 'package:did_i_assist/src/domain/models/models.dart';
+import 'package:did_i_attend/src/core/local_date.dart';
+import 'package:did_i_attend/src/data/database/app_database.dart';
+import 'package:did_i_attend/src/data/repositories/drift_attendance_repository.dart';
+import 'package:did_i_attend/src/domain/models/models.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../domain/models/fixtures.dart';

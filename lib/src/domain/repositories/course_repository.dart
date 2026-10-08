@@ -1,5 +1,5 @@
-import 'package:did_i_assist/src/domain/models/course.dart';
-import 'package:did_i_assist/src/domain/models/schedule_slot.dart';
+import 'package:did_i_attend/src/domain/models/course.dart';
+import 'package:did_i_attend/src/domain/models/schedule_slot.dart';
 
 abstract interface class CourseRepository {
   Future<Course?> getById(String id);

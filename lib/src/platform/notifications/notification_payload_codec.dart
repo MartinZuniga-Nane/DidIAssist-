@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-import 'package:did_i_assist/src/domain/models/planned_notification.dart';
+import 'package:did_i_attend/src/domain/models/planned_notification.dart';
 
 final class NotificationPayloadCodec {
   const NotificationPayloadCodec();
 
   String encode(PlannedNotification notification) => jsonEncode({
-    'owner': 'did_i_assist.notifications',
+    'owner': 'did_i_attend.notifications',
     'version': 1,
     'id': notification.id,
     'kind': notification.kind.name,
@@ -19,7 +19,7 @@ final class NotificationPayloadCodec {
     try {
       final decoded = jsonDecode(encoded);
       if (decoded case {
-        'owner': 'did_i_assist.notifications',
+        'owner': 'did_i_attend.notifications',
         'version': 1,
         'id': final int id,
         'kind': final String kind,

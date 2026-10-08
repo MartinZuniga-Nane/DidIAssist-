@@ -1,4 +1,4 @@
-name: did_i_assist
+name: did_i_attend
 description: A local-first app that records class attendance using geofencing.
 publish_to: none
 version: 0.1.0+1

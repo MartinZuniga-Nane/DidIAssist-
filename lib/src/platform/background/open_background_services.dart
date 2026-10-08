@@ -1,8 +1,8 @@
 import 'dart:ui';
 
-import 'package:did_i_assist/src/app/app_services.dart';
-import 'package:did_i_assist/src/app/background_operations.dart';
-import 'package:did_i_assist/src/app/open_app_services.dart';
+import 'package:did_i_attend/src/app/app_services.dart';
+import 'package:did_i_attend/src/app/background_operations.dart';
+import 'package:did_i_attend/src/app/open_app_services.dart';
 import 'package:flutter/widgets.dart';
 
 Future<AppServices> openBackgroundServices({

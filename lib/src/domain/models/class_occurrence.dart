@@ -1,7 +1,7 @@
-import 'package:did_i_assist/src/core/local_date.dart';
-import 'package:did_i_assist/src/domain/models/course.dart';
-import 'package:did_i_assist/src/domain/models/place.dart';
-import 'package:did_i_assist/src/domain/models/schedule_slot.dart';
+import 'package:did_i_attend/src/core/local_date.dart';
+import 'package:did_i_attend/src/domain/models/course.dart';
+import 'package:did_i_attend/src/domain/models/place.dart';
+import 'package:did_i_attend/src/domain/models/schedule_slot.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 

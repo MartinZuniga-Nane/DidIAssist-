@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:did_i_assist/src/domain/models/planned_notification.dart';
-import 'package:did_i_assist/src/domain/repositories/notification_gateway.dart';
-import 'package:did_i_assist/src/platform/notifications/lazy_notification_gateway.dart';
+import 'package:did_i_attend/src/domain/models/planned_notification.dart';
+import 'package:did_i_attend/src/domain/repositories/notification_gateway.dart';
+import 'package:did_i_attend/src/platform/notifications/lazy_notification_gateway.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../app/fakes.dart';

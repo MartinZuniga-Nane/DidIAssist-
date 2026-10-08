@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:did_i_assist/src/domain/location/position_fix.dart';
-import 'package:did_i_assist/src/domain/location/position_provider.dart';
-import 'package:did_i_assist/src/domain/models/location_event.dart';
-import 'package:did_i_assist/src/domain/models/location_event_type.dart';
-import 'package:did_i_assist/src/domain/services/location_event_recorder.dart';
-import 'package:did_i_assist/src/domain/services/position_sampler.dart';
+import 'package:did_i_attend/src/domain/location/position_fix.dart';
+import 'package:did_i_attend/src/domain/location/position_provider.dart';
+import 'package:did_i_attend/src/domain/models/location_event.dart';
+import 'package:did_i_attend/src/domain/models/location_event_type.dart';
+import 'package:did_i_attend/src/domain/services/location_event_recorder.dart';
+import 'package:did_i_attend/src/domain/services/position_sampler.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

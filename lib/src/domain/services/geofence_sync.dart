@@ -1,6 +1,6 @@
-import 'package:did_i_assist/src/domain/location/geofence_registrar.dart';
-import 'package:did_i_assist/src/domain/location/geofence_registration_id.dart';
-import 'package:did_i_assist/src/domain/repositories/place_repository.dart';
+import 'package:did_i_attend/src/domain/location/geofence_registrar.dart';
+import 'package:did_i_attend/src/domain/location/geofence_registration_id.dart';
+import 'package:did_i_attend/src/domain/repositories/place_repository.dart';
 
 final class GeofenceSync {
   const GeofenceSync({

@@ -1,9 +1,9 @@
-import 'package:did_i_assist/src/core/geo.dart';
-import 'package:did_i_assist/src/core/geo_point.dart';
-import 'package:did_i_assist/src/domain/models/class_occurrence.dart';
-import 'package:did_i_assist/src/domain/models/model_validation.dart';
-import 'package:did_i_assist/src/domain/models/place.dart';
-import 'package:did_i_assist/src/domain/services/eta_estimator.dart';
+import 'package:did_i_attend/src/core/geo.dart';
+import 'package:did_i_attend/src/core/geo_point.dart';
+import 'package:did_i_attend/src/domain/models/class_occurrence.dart';
+import 'package:did_i_attend/src/domain/models/model_validation.dart';
+import 'package:did_i_attend/src/domain/models/place.dart';
+import 'package:did_i_attend/src/domain/services/eta_estimator.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 

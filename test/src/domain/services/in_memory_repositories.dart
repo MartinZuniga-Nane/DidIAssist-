@@ -1,8 +1,8 @@
-import 'package:did_i_assist/src/domain/models/models.dart';
-import 'package:did_i_assist/src/domain/repositories/location_event_repository.dart';
-import 'package:did_i_assist/src/domain/repositories/place_repository.dart';
-import 'package:did_i_assist/src/domain/repositories/settings_repository.dart';
-import 'package:did_i_assist/src/domain/repositories/trip_repository.dart';
+import 'package:did_i_attend/src/domain/models/models.dart';
+import 'package:did_i_attend/src/domain/repositories/location_event_repository.dart';
+import 'package:did_i_attend/src/domain/repositories/place_repository.dart';
+import 'package:did_i_attend/src/domain/repositories/settings_repository.dart';
+import 'package:did_i_attend/src/domain/repositories/trip_repository.dart';
 
 final class InMemoryPlaceRepository implements PlaceRepository {
   InMemoryPlaceRepository([Iterable<Place> initial = const []])

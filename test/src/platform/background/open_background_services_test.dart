@@ -1,13 +1,13 @@
 import 'package:clock/clock.dart';
-import 'package:did_i_assist/src/app/app_services.dart';
-import 'package:did_i_assist/src/app/background_operations.dart';
-import 'package:did_i_assist/src/app/open_app_services.dart';
-import 'package:did_i_assist/src/domain/location/geofence_transition.dart';
-import 'package:did_i_assist/src/domain/location/position_fix.dart';
-import 'package:did_i_assist/src/domain/models/models.dart';
-import 'package:did_i_assist/src/domain/repositories/notification_gateway.dart';
-import 'package:did_i_assist/src/platform/background/open_background_services.dart';
-import 'package:did_i_assist/src/platform/notifications/lazy_notification_gateway.dart';
+import 'package:did_i_attend/src/app/app_services.dart';
+import 'package:did_i_attend/src/app/background_operations.dart';
+import 'package:did_i_attend/src/app/open_app_services.dart';
+import 'package:did_i_attend/src/domain/location/geofence_transition.dart';
+import 'package:did_i_attend/src/domain/location/position_fix.dart';
+import 'package:did_i_attend/src/domain/models/models.dart';
+import 'package:did_i_attend/src/domain/repositories/notification_gateway.dart';
+import 'package:did_i_attend/src/platform/background/open_background_services.dart';
+import 'package:did_i_attend/src/platform/notifications/lazy_notification_gateway.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../app/fakes.dart';

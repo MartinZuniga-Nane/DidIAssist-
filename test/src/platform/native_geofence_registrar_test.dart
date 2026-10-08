@@ -1,6 +1,6 @@
-import 'package:did_i_assist/src/domain/location/geofence_registration_id.dart';
-import 'package:did_i_assist/src/platform/background_location_callback.dart';
-import 'package:did_i_assist/src/platform/native_geofence_registrar.dart';
+import 'package:did_i_attend/src/domain/location/geofence_registration_id.dart';
+import 'package:did_i_attend/src/platform/background_location_callback.dart';
+import 'package:did_i_attend/src/platform/native_geofence_registrar.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:native_geofence/native_geofence.dart' as native;
@@ -92,7 +92,7 @@ void main() {
     'unregistering unrelated or malformed IDs never reaches the plugin',
     () async {
       await registrar.unregister('other-feature:zone');
-      await registrar.unregister('didiassist:v1:invalid');
+      await registrar.unregister('didiattend:v1:invalid');
       verifyNever(() => manager.initialize());
       verifyNever(() => manager.removeGeofenceById(any()));
     },

@@ -1,6 +1,6 @@
-import 'package:did_i_assist/src/domain/location/geofence_registration_id.dart';
-import 'package:did_i_assist/src/domain/models/place.dart';
-import 'package:did_i_assist/src/domain/services/geofence_sync.dart';
+import 'package:did_i_attend/src/domain/location/geofence_registration_id.dart';
+import 'package:did_i_attend/src/domain/models/place.dart';
+import 'package:did_i_attend/src/domain/services/geofence_sync.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
@@ -68,17 +68,17 @@ void main() {
       deleted,
       'other-feature:zone',
       'home',
-      'didiassist:v1:invalid',
+      'didiattend:v1:invalid',
     ]);
     await sync.sync();
     verify(() => registrar.unregister(deleted)).called(1);
     expect(
       registered,
-      containsAll(['other-feature:zone', 'home', 'didiassist:v1:invalid']),
+      containsAll(['other-feature:zone', 'home', 'didiattend:v1:invalid']),
     );
     verifyNever(() => registrar.unregister('other-feature:zone'));
     verifyNever(() => registrar.unregister('home'));
-    verifyNever(() => registrar.unregister('didiassist:v1:invalid'));
+    verifyNever(() => registrar.unregister('didiattend:v1:invalid'));
   });
 
   final changes = {
